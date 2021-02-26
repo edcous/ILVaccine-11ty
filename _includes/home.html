@@ -187,7 +187,7 @@ var intervalId = window.setInterval(function(){
         <input type="checkbox" class="custom-control-input" id="apt-avail" onclick="updateAppointmentStatus()">
         <label class="custom-control-label" for="apt-avail">Available appointments only</label>
     </div>
-    <select name="counties" id="county-select" onchange='updateAppointmentStatus()' class="custom-select custom-select-sm" style="display: block;margin: 0 auto;">
+    <select name="counties" id="county-select" onchange='updateAppointmentStatus()' class="custom-select custom-select-sm" style="display: block;margin: 0 auto; min-width:100px;">
         <option value="all" selected>All Counties</option>
         <option value="Cook">Cook</option>
         <option value="DuPage">DuPage - More Coming Soon</option>
@@ -196,7 +196,6 @@ var intervalId = window.setInterval(function(){
         <option value="McHenry">McHenry - More Coming Soon</option>
         <option value="Will" disabled>Will - Coming Soon</option>
     </select>
-    
     <button class='btn btn-primary text-end ml-5' onclick='updateAppointmentStatus()'>Refresh</button>
 </div>
 <p class='text-center'>Data auto refreshes every minute.</p>
