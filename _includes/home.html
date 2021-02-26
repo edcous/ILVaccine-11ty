@@ -79,7 +79,6 @@
         http.send()
         http.onload = () => {
             var data = http.responseText
-            console.log(data);
             var yesOnly = JSON.parse(data).filter(function (entry) {
                 return entry["Appointments"] === 'Yes';
             });
@@ -211,5 +210,10 @@ var intervalId = window.setInterval(function(){
 </div>
 <div id='no-apt-cards'>
 </div>
-</body></body>
+<div class="footer">
+      <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
+        ILVaccine is run by volunteers. We cannot be held liable for any inaccurate data on this site. Data is provided as is. Information about what data we collect and how it is processed can be accessed by clicking <a href='https://plausible.io/data-policy'>here.</a> 
+      </p>
+</div>
+</body>
 </html>
