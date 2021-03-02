@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="EN-US">
+<html lang="es">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -7,75 +7,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
     <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
     <script async defer data-domain="ilvaccine.com" src="https://analytics.ilvaccine.com/js/plausible.js"></script>
     <meta property="og:site_name" content="ILVaccine">
-    <meta name="description" content="ILVaccine.org is a site that displays COVID-19 Coronavirus vaccine appointment availability and eligibilty for Cook, Lake, DuPage, Kane, Will and McHenry counties in the state of Illinois.">
-    <title>ILVaccine.org - Home</title>
+    <meta name="description" content="ILVaccine.org es un sitio que muestra la disponibilidad de la vacuna COVID-19 Coronavirus para los condados de Cook, Lake, DuPage, Kane, Will y McHenry en el estado de Illinois.">
+    <title>ILVaccine.org - Hogar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <script>
 
         let yes_template ={"<>":"div","class":"card ml-4 mr-4 mb-2", "style":"min-width:70%","html":[
                 {"<>":"div","class":"card-body","html":[
                     {"<>":"h5","class":"card-title mb-2","html":"${Name}"}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Last checked " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").fromNow()}}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #377B00", "html":"<i class='bi bi-check-circle-fill'></i> Appointments available"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Address: ${Location}"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"County: ${County}"},
-                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Eligibility: ${Eligibility}"},
+                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Última comprobación " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").locale("es").fromNow()}}, 
+                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #377B00", "html":"<i class='bi bi-check-circle-fill'></i> Citas disponibles"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Dirección: ${Location}"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Condado: ${County}"},
+                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Elegibilidad: ${Eligibility}"},
                     {"<>":"p","class":"card-text","html":"${Notes}"},
-                    {"<>":"a","href":"${Website}","class":"card-link","html":"Website"}
+                    {"<>":"a","href":"${Website}","class":"card-link","html":"Sitio web"}
                 ]}
             ]}
         let strict_template ={"<>":"div","class":"card ml-4 mr-4 mb-2", "style":"min-width:70%","html":[
                 {"<>":"div","class":"card-body","html":[
                     {"<>":"h5","class":"card-title mb-2","html":"${Name}"}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Last checked " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").fromNow()}}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #96B000", "html":"<i class='bi bi-check-circle-fill'></i> Appointments available with strict residency requirements (see notes)"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Address: ${Location}"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"County: ${County}"},
-                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Eligibility: ${Eligibility}"},
+                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Última comprobación " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").locale("es").fromNow()}}, 
+                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #96B000", "html":"<i class='bi bi-check-circle-fill'></i> Citas disponibles con estrictos requisitos de residencia (ver notas)"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Dirección: ${Location}"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Condado: ${County}"},
+                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Elegibilidad: ${Eligibility}"},
                     {"<>":"p","class":"card-text","html":"${Notes}"},
-                    {"<>":"a","href":"${Website}","class":"card-link","html":"Website"}
+                    {"<>":"a","href":"${Website}","class":"card-link","html":"Sitio web"}
                 ]}
             ]}
 
         let contact_template ={"<>":"div","class":"card ml-4 mr-4 mb-2", "style":"min-width:70%","html":[
                 {"<>":"div","class":"card-body","html":[
                     {"<>":"h5","class":"card-title mb-2","html":"${Name}"}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Last checked " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").fromNow()}}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #898E00", "html":"<i class='bi bi-check-circle-fill'></i> Appointments available for patients"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Address: ${Location}"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"County: ${County}"},
-                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Eligibility: ${Eligibility}"},
+                    {"<>":"h6","class":"card-subtitle mb-4","html":function(){ return "Última comprobación " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").locale("es").fromNow()}}, 
+                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #898E00", "html":"<i class='bi bi-check-circle-fill'></i> Citas disponibles para pacientes"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Dirección: ${Location}"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Condado: ${County}"},
+                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Elegibilidad: ${Eligibility}"},
                     {"<>":"p","class":"card-text","html":"${Notes}"},
-                    {"<>":"a","href":"${Website}","class":"card-link","html":"Website"}
+                    {"<>":"a","href":"${Website}","class":"card-link","html":"Sitio web"}
                 ]}
             ]}
 
         let invite_template ={"<>":"div","class":"card ml-4 mr-4 mb-2", "style":"min-width:70%","html":[
                 {"<>":"div","class":"card-body","html":[
                     {"<>":"h5","class":"card-title mb-2","html":"${Name}"}, 
-                    {"<>":"h6","class":"card-text mb-4","html":function(){ return "Last checked " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").fromNow()}}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #C8A900", "html":"<i class='bi bi-check-circle-fill'></i> Appointments available by invite only"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Address: ${Location}"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"County: ${County}"},
-                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Eligibility: ${Eligibility}"},
+                    {"<>":"h6","class":"card-text mb-4","html":function(){ return "Última comprobación " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").locale("es").fromNow()}}, 
+                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: #C8A900", "html":"<i class='bi bi-check-circle-fill'></i> Citas disponibles solo por invitación"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Dirección: ${Location}"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Condado: ${County}"},
+                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Elegibilidad: ${Eligibility}"},
                     {"<>":"p","class":"card-text","html":"${Notes}"},
-                    {"<>":"a","href":"${Website}","class":"card-link","html":"Website"}
+                    {"<>":"a","href":"${Website}","class":"card-link","html":"Sitio web"}
                 ]}
             ]}
         let no_template ={"<>":"div","class":"card ml-4 mr-4 mb-2", "style":"min-width:80%","html":[
                 {"<>":"div","class":"card-body","html":[
                     {"<>":"h5","class":"card-title mb-2","html":"${Name}"},
-                    {"<>":"h6","class":"card-text mb-4","html":function(){ return "Last checked " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").fromNow()}}, 
-                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: red", "html":"<i class='bi bi-x-circle-fill'></i> Appointments unavailable"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Address: ${Location}"},
-                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"County: ${County}"},
-                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Eligibility: ${Eligibility}"},
+                    {"<>":"h6","class":"card-text mb-4","html":function(){ return "Última comprobación " + moment(this["TimeChecked"]).tz("Atlantic/Madeira").locale("es").fromNow()}}, 
+                    {"<>":"h6","class":"card-subtitle mb-4","style":"color: red", "html":"<i class='bi bi-x-circle-fill'></i> Citas no disponibles"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Dirección: ${Location}"},
+                    {"<>":"h6","class":"card-subtitle mb-4 text-muted","html":"Condado: ${County}"},
+                    {"<>":"p","class":"h6 card-subtitle mb-4 text-muted","html":"Elegibilidad: ${Eligibility}"},
                     {"<>":"p","class":"card-text","html":"${Notes}"},
-                    {"<>":"a","href":"${Website}","class":"card-link","html":"Website"}
+                    {"<>":"a","href":"${Website}","class":"card-link","html":"Sitio web"}
                 ]}
             ]}
         function wait(ms){
@@ -85,7 +85,7 @@
             end = new Date().getTime();
         }
         }
-        const url='https://ilvaccine-api.us-east-1.linodeobjects.com/all.json' + '?v=' + Date.now();
+        const url='https://ilvaccine-api.us-east-1.linodeobjects.com/all-es.json' + '?v=' + Date.now();
         const http = new XMLHttpRequest()
         updateAppointmentStatus()
         function updateAppointmentStatus(){
@@ -113,8 +113,8 @@
                 if(document.getElementById('apt-avail').checked){
                     if(document.getElementById('county-select').value == "all"){
                         document.getElementById('yes-apt-cards').innerHTML = json2html.transform(yesOnly,yes_template);
-                        document.getElementById('contact-apt-cards').innerHTML = ""
                         document.getElementById('strict-apt-cards').innerHTML = ""
+                        document.getElementById('contact-apt-cards').innerHTML = ""
                         document.getElementById('invite-apt-cards').innerHTML = "";
                         document.getElementById('no-apt-cards').innerHTML = "";
                     }
@@ -169,46 +169,45 @@
     </script>
     <script>
     var intervalId = window.setInterval(function(){
-    updateAppointmentStatus()
+        updateAppointmentStatus()
     }, 30000);
     </script>
 </head>
 <body>
-        <div class='header'>    
+    <div class='header'>    
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        Current Alerts:
-        <br>
-        - Some areas are struggling to get their residents vaccinated, so please be conscious of booking in neighborhoods you don't usually visit.
+        Alertas actuales:
+         <br>
+         - Algunas áreas están luchando para que sus residentes se vacunen, así que tenga en cuenta la reserva en vecindarios que no suele visitar.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
     </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-            <a class="navbar-brand" href="/">ILVaccine</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/es">ILVaccine</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/es/about">Sobre</a></li>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" data-target="#Dropdown2" aria-haspopup="true" aria-expanded="false">
-                Contact
+                Contacto
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown2" id="Dropdown2">
-            <a class="dropdown-item" href="/forms/volunteer">Volunteer</a>
-            <a class="dropdown-item" href="/forms/corrections">Corrections/Additions</a>
-            <a class="dropdown-item" href="/forms/contact">Other Inquiries</a>
+            <a class="dropdown-item" href="/es/forms/corrections">Correccións/Adiciones</a>
+            <a class="dropdown-item" href="/es/forms/contact">Otros mensajes</a>
             </div>
             </li>
             </ul>
         </nav>
         </div>
-        <h6 class="text-center"><u><a href="/" class="mr-4">English</a></u><a href="/es/" class="ml-4">Español</a></h6>
-        <h1 class="mb-5 text-center">Find a COVID Vaccine for you or a loved one</h1>
+        <h6 class="text-center"><a href="/" class="mr-4">English</a><u><a href="/es/" class="ml-4">Español</a></u></h6>
+        <h1 class="mb-5 text-center">Encuentre una vacuna COVID para usted o un ser querido</h1>
     <div class="input-group mb-4" style="margin: auto; width:80%;">
         <div class="custom-control custom-switch mr-5">
             <input type="checkbox" class="custom-control-input" id="apt-avail" onclick="updateAppointmentStatus()">
-            <label class="custom-control-label" for="apt-avail">Available appointments only</label>
+            <label class="custom-control-label" for="apt-avail">Solo citas disponibles</label>
         </div>
         <select name="counties" id="county-select" onchange='updateAppointmentStatus()' class="custom-select custom-select-sm" style="display: block;margin: 0 auto; min-width:100px;">
-            <option value="all" selected>All Counties</option>
+            <option value="all" selected>Todos los condados</option>
             <option value="Cook">Cook</option>
             <option value="DuPage">DuPage</option>
             <option value="Kane">Kane</option>
@@ -216,23 +215,25 @@
             <option value="McHenry">McHenry</option>
             <option value="Will">Will</option>
         </select>
-        <button class='btn btn-primary text-end ml-5' onclick='updateAppointmentStatus()'>Refresh</button>
+        <button class='btn btn-primary text-end ml-5' onclick='updateAppointmentStatus()'>Actualizar</button>
     </div>
-    <p class='text-center'>Data auto refreshes every minute.</p>
-    <div class="text-center" id="share-buttons">
+    <p class='text-center'>Los datos se actualizan automáticamente cada minuto.</p>
+            <div class="text-center" id="share-buttons">
             <button type="button" onclick="location.href='https://www.facebook.com/sharer/sharer.php?u=https://www.ilvaccine.org'"class="btn text-white mr-4" style="background-color:#2d4373;">
                 <i class="bi bi-facebook"></i>
             </button>
-            <button type="button" onclick="location.href='https://twitter.com/intent/tweet?url=https://www.ilvaccine.org&text=Find%20COVID-19%20vaccine%20appointment%20availability%20and%20eligibility%20across%20Chicagoland%20using%20@ILVaccine.'" class="btn text-white mr-4" style="background-color:#00acee;">
+            <button type="button" onclick="location.href='https://twitter.com/intent/tweet?url=https://www.ilvaccine.org&text=Encuentre%20la%20disponibilidad%20y%20elegibilidad%20de%20citas%20para%20la%20vacuna%20COVID-19%20en%20todo%20Chicagoland%20usando%20@ILVaccine.'" class="btn text-white mr-4" style="background-color:#00acee;">
                 <i class="bi bi-twitter"></i>
             </button>
-            <button type="button" onclick="location.href='mailto:?subject=Chicagoland%20COVID-19%20Vaccine%20Availability%20and%20Eligibility%20Information&body=Find%20COVID-19%20vaccine%20appointment%20availability%20and%20eligibility%20across%20Chicagoland%20using%20https%3A%2F%2Fwww.ilvaccine.org.'" class="btn text-white" style="background-color:gray;">
+            <button type="button" onclick="location.href='mailto:?subject=Informaci%C3%B3n%20de%20elegibilidad%20y%20disponibilidad%20de%20la%20vacuna%20COVID-19%20de%20Chicagoland&body=Encuentre%20la%20disponibilidad%20y%20elegibilidad%20de%20citas%20para%20la%20vacuna%20COVID-19%20en%20todo%20Chicagoland%20utilizando%20https%3A%2F%2Fwww.ilvaccine.org.'" class="btn text-white" style="background-color:gray;">
                 <i class="bi bi-envelope"></i>
             </button>
     </div>
+
+    </div>
     <div id='yes-apt-cards' class="mt-5">
     <div class="spinner-border align-items-center" role="status">
-    <span class="sr-only">Loading...</span>
+    <span class="sr-only">Cargando...</span>
     </div>
     </div>
     <div id='strict-apt-cards'>
@@ -244,9 +245,9 @@
     <div id='no-apt-cards'>
     </div>
     <div class="footer">
-        <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
-            ILVaccine is run by volunteers. We cannot be held liable for any inaccurate data on this site. Data is provided as is. Information about what data we collect and how it is processed can be accessed by clicking <a href='https://plausible.io/data-policy'>here.</a> 
-        </p>
+    <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
+        ILVaccine está a cargo de voluntarios. No nos hacemos responsables de los datos inexactos en este sitio. Los datos se proporcionan tal cual. Se puede acceder a la información sobre qué datos recopilamos y cómo se procesan haciendo clic en <a href='https://plausible.io/data-policy'> aquí. </a>   
+    </p>
     </div>
 </body>
 </html>
