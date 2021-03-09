@@ -3,9 +3,10 @@ title: ILVaccine
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" id="all">
   <head>
     <meta charset="utf-8">
+    <script src="/static/accessibility-en.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -35,38 +36,62 @@ title: ILVaccine
     <title>ILVaccine - {{ pagename }}</title>
   </head>
   <body>
-    <div class='header'>    
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <script src="/static/accessibility-en.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        new Accessibility();
+      }, false);
+    </script>
+    <div class='header'>
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
         Current Alerts:
         <br>
         - Some areas are struggling to get their residents vaccinated, so please be conscious of booking in neighborhoods you don't usually visit.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true">&times;</span>
         </button>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <a class="navbar-brand" href="/">ILVaccine</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" data-target="#Dropdown2" aria-haspopup="true" aria-expanded="false">
-            Contact
-          </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown2" id="Dropdown2">
-          <a class="dropdown-item" href="/forms/volunteer">Volunteer</a>
-          <a class="dropdown-item" href="/forms/corrections">Corrections/Additions</a>
-          <a class="dropdown-item" href="/forms/contact">Other Inquiries</a>
-        </div>
-        </li>
-        </ul>
-      </nav>
-    </div>
+      </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <a class="navbar-brand" href="/">ILVaccine</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" data-target="#Dropdown2" aria-haspopup="true" aria-expanded="false">
+                                Contact
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2" id="Dropdown2">
+                                <a class="dropdown-item" href="/forms/volunteer">Volunteer</a>
+                                <a class="dropdown-item" href="/forms/corrections">Corrections/Additions</a>
+                                <a class="dropdown-item" href="/forms/contact">Other Inquiries</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="collapse navbar-collapse justify-content-end ml-auto mr-5" id="navbarNav">
+                        <ul class="navbar-nav mr-4">
+                            <li class="nav-item dropdown" id="accessibility">
+                                <a class="nav-link dropdown-toggle" href="#" id="accessibilityTools" role="button" data-toggle="dropdown" data-target="#Dropdown3" aria-haspopup="true" aria-expanded="false">
+                                Accessibility
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="accessibilityTools" id="Dropdown3">
+                                    <a class="dropdown-item" onclick="increaseText()">+ Increase Text Size</a>
+                                    <a class="dropdown-item" onclick="decreaseText()">- Decrease Text Size</a>
+                                    <a class="dropdown-item" onclick="enableHighContrast()">Toggle Contrast</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
       <h1 class="mb-5 text-center">{{ pagetitle }}</h1>
-    {{ content | safe }}
-    <div class="footer">
-      <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
-        ILVaccine is run by volunteers. We cannot be held liable for any inaccurate data on this site. Data is provided as is. Information about what data we collect and how it is processed can be accessed by clicking <a href='https://plausible.io/data-policy'>here.</a> 
-      </p>
-    </div>
-  </body>
-</html>
+      {{ content | safe }}
+      <div class="footer">
+        <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
+        ILVaccine is run by volunteers. We cannot be held liable for any inaccurate data on this site. Data is provided as is. Information about what data we collect and how it is processed can be accessed by clicking <a href='https://plausible.io/data-policy'>here.</a>
+        </p>
+      </div>
+    </body>
+  </html>
