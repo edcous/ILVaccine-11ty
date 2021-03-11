@@ -6,34 +6,21 @@ title: ILVaccine
 <html lang="en" id="all">
   <head>
     <meta charset="utf-8">
-    <script src="/static/accessibility-en.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/main.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+    <script async defer data-domain="ilvaccine.com" src="https://analytics.ilvaccine.com/js/plausible.js"></script>
+    <script src="/static/accessibility-en.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script async defer data-domain="ilvaccine.com" src="https://analytics.ilvaccine.com/js/plausible.js"></script>
     <meta name="robots" content=”index, follow”>
     <meta property="og:site_name" content="ILVaccine">
     <meta name="description" content="{{ description }}">
-    <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/static/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/static/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/static/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/static/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/static/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/static/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-    <link rel="manifest" href="/static/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/static/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
     <title>ILVaccine - {{ pagename }}</title>
   </head>
   <body>
@@ -83,6 +70,15 @@ title: ILVaccine
                 </div>
       <h1 class="mb-5 text-center">{{ pagetitle }}</h1>
       {{ content | safe }}
+        <div class="fab" onclick="openNav()"> 
+            <img src="/static/human.png" height="50%">
+        </div>
+        <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#" onclick="increaseText()">+ Increase Text Size</a>
+                    <a href="#" onclick="decreaseText()">- Decrease Text Size</a>
+                    <a href="#" onclick="enableHighContrast()">Toggle Contrast</a>
+        </div>
       <div class="footer">
         <p class="mt-5 mb-4 ml-5 mr-5 card-text text-center">
         ILVaccine is run by volunteers. We cannot be held liable for any inaccurate data on this site. Data is provided as is. Information about what data we collect and how it is processed can be accessed by clicking <a href='https://plausible.io/data-policy'>here.</a>
