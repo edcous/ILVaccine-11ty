@@ -296,7 +296,7 @@
                     if (document.getElementById('county-select').value == "other") {
                         document
                             .getElementById('yes-apt-cards')
-                            .innerHTML = '<div class="card ml-4 mr-4 mb-2" style="min-width:70%"><div class="card-body"><h5 class="card-title mb-2">Options in other locations</h5><p class="card-text">ILVaccine.org only displays appointment availability for select counties in Illinois. While we are working to expand to other counties in Illinois, we realize that people in other locations that we do not cover are still looking for the vaccine. We have created this list of resources for people looking in other areas: <br> <ul><li><a href=\'https://www.findyourvaccine.org\'>FindYourVaccine.org</a> (list of each state\'s vaccine eligiblity, as well as appointment availability in select states)</li><li><a href=\'https://getmyvaccine.org\'>GetMyVaccine.org</a> (automated pharmacy appointment info)</li><li><a href=\'https://vacfind.org/\'>VacFind.org</a> (list of national and regional appointment finder sites)</li></ul></p></div></div>'
+                            .innerHTML = '<div class="card ml-4 mr-4 mb-2" style="min-width:70%"><div class="card-body"><h5 class="card-title mb-2">Options in other locations</h5><p class="card-text">ILVaccine.org displays appointment availability for most counties in Illinois. We have created this list of resources for people looking in other states: <br> <ul><li><a href=\'https://www.findyourvaccine.org\'>FindYourVaccine.org</a> (list of each state\'s vaccine eligiblity, as well as appointment availability in select states)</li><li><a href=\'https://www.vaccinespotter.org\'>VaccineSpotter.org</a> (automated pharmacy appointment info)</li><li><a href=\'https://vacfind.org/\'>VacFind.org</a> (list of national and regional appointment finder sites)</li></ul></p></div></div>'
                         document
                             .getElementById('strict-apt-cards')
                             .innerHTML = ""
@@ -493,36 +493,57 @@
                     <select name="counties" id="county-select" onchange='updateAppointmentStatus()' class="custom-select custom-select-sm" style="display: block;margin: 0 auto; min-width:100px;">
                         <option value="all" selected>All Counties</option>
                         <option value="Adams">Adams</option>
+                        <option value="Caroll">Caroll</option>
                         <option value="Cass">Cass</option>
+                        <option value="Champaign">Champaign</option>
+                        <option value="Christian">Christian</option>
                         <option value="Clark">Clark</option>
-                        <option class="Clay">Clay</option>
+                        <option value="Clay">Clay</option>
+                        <option value="Coles">Coles</option>
                         <option value="Cook">Cook</option>
                         <option class="Crawford">Crawford</option>
                         <option value="DeKalb">DeKalb</option>
+                        <option value="Douglas">Douglas</option>
                         <option value="DuPage">DuPage</option>
+                        <option value="Dewitt">Dewitt</option>
+                        <option value="Edgar">Edgar</option>
+                        <option value="Edwards">Edwards</option>
                         <option value="Effingham">Effingham</option>
                         <option value="Fayette">Fayette</option>
                         <option value="Franklin">Franklin</option>
                         <option value="Fulton">Fulton</option>
+                        <option value="Grundy">Grundy</option>
                         <option value="Hancock">Hancock</option>
+                        <option value="Henderson">Henderson</option>
+                        <option value="Henry">Henry</option>
+                        <option value="Iroquois">Iroquois</option>
                         <option value="Jackson">Jackson</option>
                         <option value="Jefferson">Jefferson</option>
+                        <option value="Jersey">Jersey</option>
                         <option value="Jo Daviess">Jo Daviess</option>
                         <option value="Kane">Kane</option>
                         <option value="Kankakee">Kankakee</option>
+                        <option value="Kendall">Kendall</option>
                         <option value="Knox">Knox</option>
                         <option value="La Salle">La Salle</option>
                         <option value="Lake">Lake</option>
+                        <option value="Livingston">Livingston</option>
+                        <option value="Macon">Macon</option>
+                        <option value="Macoupin">Macoupin</option>
                         <option value="Madison">Madison</option>
                         <option value="Marion">Marion</option>
+                        <option value="Massac">Massac</option>
                         <option value="McDonough">McDonough</option>
                         <option value="McHenry">McHenry</option>
                         <option value="McLean">McLean</option>
+                        <option value="Morgan">Morgan</option>
                         <option value="Mercer">Mercer</option>
                         <option value="Ogle">Ogle</option>
                         <option value="Peoria">Peoria</option>
                         <option value="Perry">Perry</option>
                         <option value="Pike">Pike</option>
+                        <option value="Pulaski">Pulaski</option>
+                        <option value="Putnam">Putnam</option>
                         <option value="Randolph">Randolph</option>
                         <option value="Richland">Richland</option>
                         <option value="Rock Island">Rock Island</option>
@@ -538,7 +559,8 @@
                         <option value="Will">Will</option>
                         <option value="Willamson">Willamson</option>
                         <option value="Winnebago">Winnebago</option>
-                        <option value="other">Other States/Counties</option>
+                        <option value="Woodford">Woodford</option>
+                        <option value="other">Other States</option>
                     </select>
                     <button class='btn btn-primary text-end ml-5' onclick='updateAppointmentStatus()'>Refresh</button>
                 </div>
