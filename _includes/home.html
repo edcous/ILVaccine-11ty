@@ -367,7 +367,7 @@
                             var yesOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes');
                                 });
                             document
                                 .getElementById('yes-apt-cards')
@@ -406,27 +406,27 @@
                             var yesOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes');
                                 });
                             var strictOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, strict neighborhood requirement');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, strict neighborhood requirement');
                                 });
                             var inviteOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, by invite only');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, by invite only');
                                 });
                             var noOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'No');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'No');
                                 });
                             var contactOnlyCounty = JSON
                                 .parse(data)
                                 .filter(function (entry) {
-                                    return (String(entry["County"]) == (" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, for patients only');
+                                    return (String(entry["County"]).includes(" " + document.getElementById('county-select').value)) && (entry["Appointments"] === 'Yes, for patients only');
                                 });
                             document
                                 .getElementById('yes-apt-cards')
@@ -571,7 +571,7 @@
             <option value="Vermilion">Vermilion</option>
             <option value="Wayne">Wayne</option>
             <option value="White">White</option>
-            <option value="Will">Will</option>
+            <option value=" Will">Will</option>
             <option value="Willamson">Willamson</option>
             <option value="Winnebago">Winnebago</option>
             <option value="Woodford">Woodford</option>
