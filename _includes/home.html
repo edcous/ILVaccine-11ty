@@ -18,6 +18,7 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
     <script async defer data-domain="ilvaccine.com" src="https://analytics.ilvaccine.com/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     <script src="/static/accessibility-en.js"></script>
     <meta property="og:site_name" content="ILVaccine">
     <meta name="description"
@@ -572,9 +573,24 @@
         <button class='btn btn-primary text-end ml-5' onclick='updateAppointmentStatus()'>Refresh</button>
     </div>
     <p class='text-center mb-4'>Data displayed will auto-refresh</p>
-    <p class='text-center mb-4'>NEW: Everyone 12+ (or 18+ depending on location and vaccine given) is now eligible for the COVID-19 vaccine. Some locations may still have requirements on residency or require you to be a patient.</p>
+    <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <p class='text-center mb-4 ml-5 mr-5'>NEW: Everyone 12+ (or 18+ depending on location and vaccine given) is now eligible for the COVID-19 vaccine. Some locations may still have requirements on residency or require you to be a patient.</p>
+        </div>
+        </div>
+      </div>
+    <h4 class='text-center mb-2 mt-5'>Vaccinate The States</h4>
+    <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <p class='text-center mt-2 text-wrap text-break'>Vaccinate The States is a volunteer-run project working to provide the most comprehensive list of vaccination sites in America. While they don't list availability, they are a very useful resource to find locations that offer the vaccine. You can access their site by clicking the button below.</p>
+        </div>
+        </div>
+      </div>
+    <a href="https://www.vaccinatethestates.com"><button type="button" class="btn btn-primary mb-5" style="display: block; margin: 0 auto;" onclick="plausible('Visit VTS')">Visit Vaccinate The States</button></a>
     <p class='text-center mb-4 h5'>Share:</p>
-    <div class="text-center" id="share-buttons">
+    <div class="text-center mb-2" id="share-buttons">
         <button type="button"
             onclick="location.href='https://www.facebook.com/sharer/sharer.php?u=https://www.ilvaccine.org'"
             class="btn text-white mr-4" style="background-color:#2d4373;">
@@ -591,7 +607,7 @@
             <i class="bi bi-envelope"></i>
         </button>
     </div>
-    <div id="twitter-follow" class="mt-4" style="display: flex;justify-content: center;align-items: center;">
+    <div id="twitter-follow" class="mt-4 mb-5" style="display: flex;justify-content: center;align-items: center;">
         <a href="https://twitter.com/intent/follow?screen_name=ILVaccine" class="twitter-follow-button"
             data-show-count="false">
             <button type="button" class="btn btn-sm text-white" style="background-color:#00acee;">
@@ -600,7 +616,7 @@
         </a>
 
     </div>
-    <div id='yes-apt-cards' class="mt-5">
+    <div id='yes-apt-cards' class="mb-2">
         <div class="spinner-border align-items-center" role="status">
             <span class="sr-only">Loading...</span>
         </div>
