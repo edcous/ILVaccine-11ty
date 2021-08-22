@@ -281,7 +281,7 @@
                 end = new Date().getTime();
             }
         }
-        const url = 'https://ilvaccine-api.us-east-1.linodeobjects.com/all-es.json' + '?v=' + Date.now();
+        const url = '/static/archived-es.json';
         const http = new XMLHttpRequest()
         updateAppointmentStatus()
         function updateAppointmentStatus() {
@@ -436,19 +436,22 @@
                 }
             }
         }
-
-            //We do that to ensure to get a correct JSON
-            //We can use {'name': 'Lenovo Thinkpad 41A429ff8'} as criteria too
-    </script>
-    <script>
-        var intervalId = window.setInterval(function () {
-            updateAppointmentStatus()
-        }, 30000);
     </script>
 </head>
 
 <body>
     <div class='header'>
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            Alertas actuales:
+            <br>
+            - Algunas áreas están luchando para vacunar a sus residentes, así que tenga en cuenta que no debe reservar
+            en vecindarios que no suele visitar.
+            <br>
+            - Illinois tiene un centro de llamadas para ayudarlo si tiene problemas para navegar por el sistema de citas que puede contactar llamando al <a href="tel:+18336211284">833-621-1284</a>.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
             <a class="navbar-brand" href="/es">ILVaccine</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -457,7 +460,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="/es/about">Sobre</a>
+                        <a class="nav-link" href="/es/about">Sobre</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
@@ -465,7 +468,7 @@
                             Contacto
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2" id="Dropdown2">
-                            <a class="dropdown-item disabled" href="/es/forms/corrections">Correccións/Adiciones</a>
+                            <a class="dropdown-item" href="/es/forms/corrections">Correccións/Adiciones</a>
                             <a class="dropdown-item" href="/es/forms/contact">Otros mensajes</a>
                         </div>
                     </li>
@@ -478,26 +481,113 @@
             <a href="/es/" class="ml-4">Español</a>
         </u>
     </h6>
-    <h2 class="mb-2 text-center">ILVaccine.org</h2>
-    <p class="mb-2 text-center">A la luz del exceso de suministro de vacunas y la mejora de la funcionalidad de vacuna.gov, incluida la adición de disponibilidad en tiempo real, <br> ILVaccine.org ya no se actualiza. Gracias a todos nuestros voluntarios.</p>
-    <h5 class='text-center mb-2 mt-5'>¿Sigues buscando una vacuna?</h5>
-    <div class="container">
-        <div class="row">
-          <div class="col-md">
-                <p class='text-center mt-2 text-wrap text-break'>Si todavía está buscando una vacuna, haga clic en el botón a continuación para acceder a vacunas.gov:</p>
-            </div>
+    <div class="alert alert-warning" role="alert">
+        ⚠️ Este archivo del sitio contiene datos del 22/8/2021, pero ya no se actualiza.
+    </div>
+    <h1 class="mb-5 text-center">Encuentre una vacuna COVID para usted o un ser querido</h1>
+    <div class="input-group mb-4" style="margin: auto; width:80%;">
+        <div class="custom-control custom-switch mr-5">
+            <input type="checkbox" class="custom-control-input" id="apt-avail" onclick="updateAppointmentStatus()">
+            <label class="custom-control-label" for="apt-avail">Solo citas disponibles</label>
+        </div>
+        <select name="counties" id="county-select" onchange='updateAppointmentStatus()'
+            class="custom-select custom-select-sm" style="display: block;margin: 0 auto; min-width:100px;">
+            <option value="all" selected>Todos los condados</option>
+            <option value="Adams">Adams</option>
+            <option value="Boone">Boone</option>
+            <option value="Bureau">Bureau</option>
+            <option value="Caroll">Caroll</option>
+            <option value="Cass">Cass</option>
+            <option value="Champaign">Champaign</option>
+            <option value="Christian">Christian</option>
+            <option value="Clark">Clark</option>
+            <option value="Clay">Clay</option>
+            <option value="Coles">Coles</option>
+            <option value="Cook">Cook</option>
+            <option value="Clinton">Clinton</option>
+            <option class="Crawford">Crawford</option>
+            <option value="DeKalb">DeKalb</option>
+            <option value="Douglas">Douglas</option>
+            <option value="DuPage">DuPage</option>
+            <option value="Dewitt">Dewitt</option>
+            <option value="Edgar">Edgar</option>
+            <option value="Edwards">Edwards</option>
+            <option value="Effingham">Effingham</option>
+            <option value="Fayette">Fayette</option>
+            <option value="Franklin">Franklin</option>
+            <option value="Fulton">Fulton</option>
+            <option value="Grundy">Grundy</option>
+            <option value="Hardin">Hardin</option>
+            <option value="Hancock">Hancock</option>
+            <option value="Henderson">Henderson</option>
+            <option value="Henry">Henry</option>
+            <option value="Iroquois">Iroquois</option>
+            <option value="Jackson">Jackson</option>
+            <option value="Jefferson">Jefferson</option>
+            <option value="Jersey">Jersey</option>
+            <option value="Jo Daviess">Jo Daviess</option>
+            <option value="Kane">Kane</option>
+            <option value="Kankakee">Kankakee</option>
+            <option value="Kendall">Kendall</option>
+            <option value="Knox">Knox</option>
+            <option value="La Salle">La Salle</option>
+            <option value="Lake">Lake</option>
+            <option value="Lawrence">Lawrence</option>
+            <option value="Lee">Lee</option>
+            <option value="Livingston">Livingston</option>
+            <option value="Logan">Logan</option>
+            <option value="Macon">Macon</option>
+            <option value="Macoupin">Macoupin</option>
+            <option value="Madison">Madison</option>
+            <option value="Marion">Marion</option>
+            <option value="Massac">Massac</option>
+            <option value="McDonough">McDonough</option>
+            <option value="McHenry">McHenry</option>
+            <option value="McLean">McLean</option>
+            <option value="Menard">Menard</option>
+            <option value="Mercer">Mercer</option>
+            <option value="Monroe">Monroe</option>
+            <option value="Morgan">Morgan</option>
+            <option value="Montgomery">Montgomery</option>
+            <option value="Ogle">Ogle</option>
+            <option value="Peoria">Peoria</option>
+            <option value="Perry">Perry</option>
+            <option value="Pike">Pike</option>
+            <option value="Pulaski">Pulaski</option>
+            <option value="Putnam">Putnam</option>
+            <option value="Pope">Pope</option>
+            <option value="Randolph">Randolph</option>
+            <option value="Richland">Richland</option>
+            <option value="Rock Island">Rock Island</option>
+            <option value="Saline">Saline</option>
+            <option value="Sangamon">Sangamon</option>
+            <option value="Shelby">Shelby</option>
+            <option value="St. Clair">St. Clair</option>
+            <option value="Stephenson">Stephenson</option>
+            <option value="Tazewell">Tazewell</option>
+            <option value="Union">Union</option>
+            <option value="Vermilion">Vermilion</option>
+            <option value="Wayne">Wayne</option>
+            <option value="White">White</option>
+            <option value="Whiteside">Whiteside</option>
+            <option value=" Will">Will</option>
+            <option value="Willamson">Willamson</option>
+            <option value="Winnebago">Winnebago</option>
+            <option value="Woodford">Woodford</option>
+            <option value="other">Otros estados</option>
+        </select>
+    </div>
+    <p class='text-center mb-4 ml-5 mr-5'>Todas las personas mayores de 12 años (o mayores de 18 según la ubicación y la vacuna administrada) ahora son elegibles para la vacuna COVID-19. Es posible que algunas ubicaciones aún tengan requisitos de residencia o requieran que usted sea un paciente.</p>
+    </div>
+    <div id='yes-apt-cards' class="mt-5">
+        <div class="spinner-border align-items-center" role="status">
+            <span class="sr-only">Cargando...</span>
         </div>
     </div>
-    <a href="/vf-es-redirect"><button type="button" class="btn btn-primary mb-5" style="display: block; margin: 0 auto;">Visitar Vacunas.gov</button></a>
-    <h5 class='text-center mb-2 mt-5'>Datos archivados de ILVaccine.org</h5>
-    <div class="container">
-        <div class="row">
-          <div class="col-md">
-                <p class='text-center mt-2 text-wrap text-break'>Si desea ver los datos archivados de ILVaccine.org, puede acceder a ellos haciendo clic en el botón de abajo:</p>
-            </div>
-        </div>
-    </div>
-    <a href="/home-archived-es"><button type="button" class="btn btn-primary mb-5" style="display: block; margin: 0 auto;">Visita el ILVaccine.org Archivo</button></a>
+    <div id='strict-apt-cards'></div>
+    <div id='contact-apt-cards'></div>
+    <div id='invite-apt-cards'></div>
+    <div id='no-apt-cards'></div>
     <div class="fab" onclick="openNav()">
         <img src="/static/human.png" alt="opciones de accesibilidad" height="50%">
     </div>
